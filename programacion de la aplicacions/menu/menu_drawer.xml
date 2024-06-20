@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_option1"
+            android:title="Muerte descendente" />
+        <item
+            android:id="@+id/menu_option2"
+            android:title="Oidium" />
+        <item
+            android:id="@+id/menu_option3"
+            android:title="Mildeo velloso " />
+        <item
+            android:id="@+id/menu_option4"
+            android:title="Botrytis" />
+        <item
+            android:id="@+id/menu_option5"
+            android:title="Defoliadores" />
+
+    </group>
+</menu>

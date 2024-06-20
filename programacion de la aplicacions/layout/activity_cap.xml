@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CapActivity">
+
+    <TextView
+        android:id="@+id/inferenceTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inference Time: "
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/inferenceTime"
+        android:layout_above="@id/buttonsLayout"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:contentDescription="Selected or Captured Image" />
+
+    <com.uta.deteccionplagas.OverlayView
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/inferenceTime"
+        android:layout_above="@id/buttonsLayout"
+        android:background="@android:color/transparent" />
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/selectImage"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="10dp"
+            android:text="Seleccionar imagen de galería"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:icon="@android:drawable/ic_menu_gallery" />
+
+        <Button
+            android:id="@+id/takePicture"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="10dp"
+            android:text="Usar cámara para capturar foto"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:icon="@android:drawable/ic_menu_camera" />
+    </LinearLayout>
+
+</RelativeLayout>

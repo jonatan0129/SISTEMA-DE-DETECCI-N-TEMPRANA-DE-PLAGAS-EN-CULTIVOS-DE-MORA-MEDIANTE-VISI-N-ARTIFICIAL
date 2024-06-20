@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Contenido Principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Título del contenido -->
+            <TextView
+                android:id="@+id/content_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:visibility="gone" /> <!-- Inicialmente invisible -->
+
+            <!-- Primer Subtítulo del contenido -->
+            <TextView
+                android:id="@+id/content_subtitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subtítulo 1"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:visibility="gone" /> <!-- Inicialmente invisible -->
+
+            <!-- Texto después del primer subtítulo -->
+            <TextView
+                android:id="@+id/content_subtitle1_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|end"
+                android:lineSpacingMultiplier="1.2"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:visibility="gone" /> <!-- Inicialmente invisible -->
+
+            <!-- Segundo Subtítulo del contenido -->
+            <TextView
+                android:id="@+id/content_subtitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subtítulo 2"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:visibility="gone" /> <!-- Inicialmente invisible -->
+
+            <!-- Texto después del segundo subtítulo -->
+            <TextView
+                android:id="@+id/content_subtitle2_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|end"
+                android:lineSpacingMultiplier="1.2"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:visibility="gone" /> <!-- Inicialmente invisible -->
+
+            <!-- ImageView para mostrar la imagen -->
+            <ImageView
+                android:id="@+id/content_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:visibility="gone" /> <!-- Inicialmente invisible -->
+
+            <!-- Texto del contenido -->
+            <TextView
+                android:id="@+id/content_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|end"
+                android:lineSpacingMultiplier="1.2"
+                android:padding="16dp"
+                android:text="Principales enfermedades de la mora"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Menú Lateral -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_drawer_control" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

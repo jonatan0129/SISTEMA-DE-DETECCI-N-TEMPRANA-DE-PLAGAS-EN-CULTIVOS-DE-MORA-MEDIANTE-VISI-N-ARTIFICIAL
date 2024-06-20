@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/control_option1"
+            android:title="Control de muerte descendente" />
+        <item
+            android:id="@+id/control_option2"
+            android:title="Control de Oidium" />
+        <item
+            android:id="@+id/control_option3"
+            android:title="Control de mildeo Velloso" />
+        <item
+            android:id="@+id/control_option4"
+            android:title="Contol de botrytis" />
+        <item
+            android:id="@+id/control_option5"
+            android:title="Control de defoliadores" />
+    </group>
+</menu>

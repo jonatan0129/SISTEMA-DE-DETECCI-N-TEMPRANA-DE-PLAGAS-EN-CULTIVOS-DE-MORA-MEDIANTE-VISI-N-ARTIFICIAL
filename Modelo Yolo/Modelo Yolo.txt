@@ -1,0 +1,47 @@
+### 1. Mount Google Drive ###
+
+from google.colab import drive
+
+drive.mount('/content/gdrive')
+
+
+### 2. Define root directory ###
+
+ROOT_DIR = '/content/gdrive/MyDrive/dataYOLO/datosdeteccion'
+
+### 3. Install Ultralytics ###
+
+!pip install ultralytics
+### 4. Train model ###
+
+import os
+
+from ultralytics import YOLO
+
+
+# Load a model
+model = YOLO("yolov8n.pt")  # load pre trained model
+
+# Use the model
+results = model.train(data=os.path.join(ROOT_DIR, "/content/gdrive/MyDrive/dataYOLO/dataset.yaml"), epochs=20)  # train the model
+
+import os
+import shutil
+
+# Directorio de origen en Google Colab
+dir_origen = '/content/runs'
+
+# Directorio de destino en Google Drive
+dir_destino = '/content/drive/MyDrive/entrenamiento/runs'
+
+# Copiar los archivos al directorio de Google Drive
+for root, dirs, files in os.walk(dir_origen):
+    for file in files:
+        src_path = os.path.join(root, file)
+        dest_path = os.path.join(dir_destino, os.path.relpath(src_path, dir_origen))
+        os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+        shutil.copy2(src_path, dest_path)
+
+print("¡Carpeta copiada exitosamente a Google Drive!")
+
+
